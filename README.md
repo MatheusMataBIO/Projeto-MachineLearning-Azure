@@ -11,21 +11,24 @@ Dica : se você já tiver um espaço de trabalho do Azure Machine Learning, pode
 
 Entre no portal do Azure usando https://portal.azure.comsuas credenciais da Microsoft.
 
-Selecione + Criar um recurso , pesquise Machine Learning e crie um novo recurso do Azure Machine Learning com as seguintes configurações:
-Assinatura : sua assinatura do Azure .
-Grupo de recursos : Crie ou selecione um grupo de recursos .
-Nome : Insira um nome exclusivo para seu espaço de trabalho .
-Região : Selecione a região geográfica mais próxima .
-Conta de armazenamento : observe a nova conta de armazenamento padrão que será criada para seu espaço de trabalho .
-Cofre de chaves : Observe o novo cofre de chaves padrão que será criado para seu espaço de trabalho .
-Insights de aplicativo : observe o novo recurso padrão de insights de aplicativo que será criado para seu espaço de trabalho .
-Registro de contêiner : Nenhum ( um será criado automaticamente na primeira vez que você implantar um modelo em um contêiner ).
-Selecione Revisar + criar e selecione Criar . Aguarde a criação do seu espaço de trabalho (pode demorar alguns minutos) e, em seguida, vá para o recurso implantado.
+### 2° passo - Selecione + Criar um recurso , pesquise Machine Learning e crie um novo recurso do Azure Machine Learning com as seguintes configurações:
+
+### Assinatura : sua assinatura do Azure .
+### Grupo de recursos : Crie ou selecione um grupo de recursos .
+### Nome : Insira um nome exclusivo para seu espaço de trabalho .
+### Região : Selecione a região geográfica mais próxima .
+### Conta de armazenamento : observe a nova conta de armazenamento padrão que será criada para seu espaço de trabalho .
+### Cofre de chaves : Observe o novo cofre de chaves padrão que será criado para seu espaço de trabalho .
+### Insights de aplicativo : observe o novo recurso padrão de insights de aplicativo que será criado para seu espaço de trabalho .
+### Registro de contêiner : Nenhum ( um será criado automaticamente na primeira vez que você implantar um modelo em um contêiner ).
+### Selecione Revisar + criar e selecione Criar . Aguarde a criação do seu espaço de trabalho (pode demorar alguns minutos) e, em seguida, vá para o recurso implantado.
 
 Selecione Launch Studio (ou abra uma nova guia do navegador e navegue até https://ml.azure.com e entre no Azure Machine Learning Studio usando sua conta da Microsoft). Feche todas as mensagens exibidas.
 
 No estúdio Azure Machine Learning, você deverá ver seu espaço de trabalho recém-criado. Caso contrário, selecione Todos os espaços de trabalho no menu à esquerda e selecione o espaço de trabalho que você acabou de criar.
-Use aprendizado de máquina automatizado para treinar um modelo
+
+### 3° passo - Use aprendizado de máquina automatizado para treinar um modelo
+
 O aprendizado de máquina automatizado permite que você experimente vários algoritmos e parâmetros para treinar vários modelos e identificar o melhor para seus dados. Neste exercício, você usará um conjunto de dados de detalhes históricos de aluguel de bicicletas para treinar um modelo que prevê o número de aluguel de bicicletas esperado em um determinado dia, com base em características sazonais e meteorológicas.
 
 Citação : Os dados usados ​​neste exercício são derivados da Capital Bikeshare e são usados ​​de acordo com o contrato de licença de dados publicado .
@@ -36,64 +39,79 @@ Crie um novo trabalho de ML automatizado com as seguintes configurações, usand
 
 Configurações básicas :
 
-Nome do trabalho : mslearn-bike-automl
-Novo nome do experimento : mslearn-bike-rental
-Descrição : Aprendizado de máquina automatizado para previsão de aluguel de bicicletas
-Marcadores : nenhum
+### Nome do trabalho : slearn-bike-automl
+### Novo nome do experimento : mslearn-bike-rental
+### Descrição : Aprendizado de máquina automatizado para previsão de aluguel de bicicletas
+### Marcadores : nenhum
+
 Tipo de tarefa e dados :
 
-Selecione o tipo de tarefa : Regressão
-Selecionar conjunto de dados : crie um novo conjunto de dados com as seguintes configurações:
-Tipo de dados :
-Nome : aluguel de bicicletas
-Descrição : dados históricos de aluguel de bicicletas
-Tipo : Tabular
+### Selecione o tipo de tarefa : Regressão
+### Selecionar conjunto de dados : crie um novo conjunto de dados com as seguintes configurações:
+### Tipo de dados :
+### Nome : aluguel de bicicletas
+### Descrição : dados históricos de aluguel de bicicletas
+### Tipo : Tabular
+
 Fonte de dados :
-Selecione Dos arquivos da web
+
+### Selecione Dos arquivos da web
+
 URL da Web :
-URL da Web :https://aka.ms/bike-rentals
-Ignorar validação de dados : não selecionar
+
+### URL da Web :https://aka.ms/bike-rentals
+### Ignorar validação de dados : não selecionar
+
 Configurações :
-Formato de arquivo : Delimitado
-Delimitador : Vírgula
-Codificação : UTF-8
-Cabeçalhos de coluna : apenas o primeiro arquivo possui cabeçalhos
-Pular linhas : Nenhum
-O conjunto de dados contém dados multilinhas : não selecione
+
+### Formato de arquivo : Delimitado
+### Delimitador : Vírgula
+### Codificação : UTF-8
+### Cabeçalhos de coluna : apenas o primeiro arquivo possui cabeçalhos
+### Pular linhas : Nenhum
+### O conjunto de dados contém dados multilinhas : não selecione
+
 Esquema :
-Incluir todas as colunas exceto Caminho
-Revise os tipos detectados automaticamente
-Selecione Criar . Após a criação do conjunto de dados, selecione o conjunto de dados de aluguel de bicicletas para continuar a enviar o trabalho de ML automatizado.
+
+### Incluir todas as colunas exceto Caminho
+### Revise os tipos detectados automaticamente
+### Selecione Criar . Após a criação do conjunto de dados, selecione o conjunto de dados de aluguel de bicicletas para continuar a enviar o trabalho de ML automatizado.
 
 Configurações de tarefa :
 
-Tipo de tarefa : Regressão
-Conjunto de dados : aluguel de bicicletas
-Coluna de destino : Aluguéis (inteiro)
+### Tipo de tarefa : Regressão
+### Conjunto de dados : aluguel de bicicletas
+### Coluna de destino : Aluguéis (inteiro)
+
 Configurações adicionais :
-Métrica primária : raiz do erro quadrático médio normalizado
-Explique o melhor modelo : Não selecionado
-Usar todos os modelos suportados : Desmarcado . Você restringirá o trabalho para tentar apenas alguns algoritmos específicos.
-Modelos permitidos : Selecione apenas RandomForest e LightGBM — normalmente você gostaria de tentar o máximo possível, mas cada modelo adicionado aumenta o tempo necessário para executar o trabalho.
-Limites : expanda esta seção
-Máximo de testes : 3
-Máximo de testes simultâneos : 3
-Máximo de nós : 3
-Limite de pontuação da métrica : 0,085 ( para que, se um modelo atingir uma pontuação da métrica de erro quadrático médio normalizado de 0,085 ou menos, o trabalho termina. )
-Tempo limite : 15
-Tempo limite de iteração : 15
-Habilitar rescisão antecipada : selecionado
+
+### Métrica primária : raiz do erro quadrático médio normalizado
+### Explique o melhor modelo : Não selecionado
+### Usar todos os modelos suportados : Desmarcado . Você restringirá o trabalho para tentar apenas alguns algoritmos específicos.
+### Modelos permitidos : Selecione apenas RandomForest e LightGBM — normalmente você gostaria de tentar o máximo possível, mas cada modelo adicionado aumenta o tempo necessário para executar o trabalho.
+### Limites : expanda esta seção
+### Máximo de testes : 3
+### Máximo de testes simultâneos : 3
+### Máximo de nós : 3
+### Limite de pontuação da métrica : 0,085 ( para que, se um modelo atingir uma pontuação da métrica de erro quadrático médio normalizado de 0,085 ou menos, o trabalho termina. )
+### Tempo limite : 15
+### Tempo limite de iteração : 15
+### Habilitar rescisão antecipada : selecionado
+
 Validação e teste :
-Tipo de validação : divisão de validação de trem
-Porcentagem de dados de validação : 10
-Conjunto de dados de teste : Nenhum
+
+### Tipo de validação : divisão de validação de trem
+### Porcentagem de dados de validação : 10
+### Conjunto de dados de teste : Nenhum
+
 Calcular :
 
-Selecione o tipo de computação : sem servidor
-Tipo de máquina virtual : CPU
-Camada de máquina virtual : Dedicada
-Tamanho da máquina virtual : Standard_DS3_V2*
-Número de instâncias : 1
+### Selecione o tipo de computação : sem servidor
+### Tipo de máquina virtual : CPU
+### Camada de máquina virtual : Dedicada
+### Tamanho da máquina virtual : Standard_DS3_V2*
+### Número de instâncias : 1
+
 * Se a sua assinatura restringir os tamanhos de VM disponíveis para você, escolha qualquer tamanho disponível.
 
 Envie o trabalho de treinamento. Ele inicia automaticamente.
