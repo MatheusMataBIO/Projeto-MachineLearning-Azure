@@ -118,7 +118,8 @@ Envie o trabalho de treinamento. Ele inicia automaticamente.
 
 Espere o trabalho terminar. Pode demorar um pouco – agora pode ser um bom momento para uma pausa para o café!
 
-Avalie o melhor modelo
+### 4° passo - Avalie o melhor modelo
+
 Quando o trabalho automatizado de aprendizado de máquina for concluído, você poderá revisar o melhor modelo treinado.
 
 Na guia Visão geral do trabalho automatizado de aprendizado de máquina, observe o melhor resumo do modelo. Captura de tela do melhor resumo do modelo do trabalho automatizado de aprendizado de máquina com uma caixa ao redor do nome do algoritmo.
@@ -131,7 +132,8 @@ Selecione a guia Métricas e selecione os gráficos residuais e predito_true se 
 
 Revise os gráficos que mostram o desempenho do modelo. O gráfico de resíduos mostra os resíduos (as diferenças entre os valores previstos e reais) como um histograma. O gráfico predito_true compara os valores previstos com os valores verdadeiros.
 
-Implantar e testar o modelo
+### Implantar e testar o modelo
+
 Na guia Modelo do melhor modelo treinado pelo seu trabalho automatizado de machine learning, selecione Implantar e use a opção de serviço Web para implantar o modelo com as seguintes configurações:
 Nome : prever-aluguéis
 Descrição : Prever aluguel de bicicletas
