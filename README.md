@@ -2,7 +2,9 @@
 
 ## Projeto utilizando o Machine Learning Azure
 
-Crie um espaço de trabalho do Azure Machine Learning
+
+### 1° passo - Crie um espaço de trabalho do Azure Machine Learning
+
 Para utilizar o Azure Machine Learning, é necessário aprovisionar um espaço de trabalho do Azure Machine Learning na sua subscrição do Azure. Depois, você poderá usar o estúdio Azure Machine Learning para trabalhar com os recursos do seu workspace.
 
 Dica : se você já tiver um espaço de trabalho do Azure Machine Learning, poderá usá-lo e pular para a próxima tarefa.
