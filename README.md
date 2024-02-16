@@ -184,4 +184,4 @@ Código
  }
 O painel de teste pegou os dados de entrada e usou o modelo treinado para retornar o número previsto de aluguéis.
 
-Vamos revisar o que você fez. Você usou um conjunto de dados históricos de aluguel de bicicletas para treinar um modelo. O modelo prevê o número de alugueres de bicicletas esperados num determinado dia, com base em características sazonais e meteorológicas .
+Vamos revisar o que você fez. Você usou um conjunto de dados históricos de aluguel de bicicletas para treinar um modelo. O modelo prevê o número de alugueres de bicicletas esperados num determinado dia, com base em características sazonais e meterológicas.
